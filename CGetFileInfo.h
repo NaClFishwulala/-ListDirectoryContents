@@ -7,17 +7,20 @@ class CGetFileInfo
 {
 private:
     struct stat m_statBuf;
-    const char* m_fileName;
+    std::string m_fileName;
+    std::string m_fileType;
+    std::string m_filePermission;
     off_t m_fileSize;
-
     std::string m_fileInfo;
 
 public:
     CGetFileInfo(const char* fileName);
     ~CGetFileInfo();
 
-    void GeiFileSize();
-
+    std::string GetFileType();
+    std::string GetFilePermission();
+    off_t GetFileSize();
+    void PrintFileInfo();
 };
 
 

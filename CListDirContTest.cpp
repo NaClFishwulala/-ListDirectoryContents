@@ -2,13 +2,11 @@
 #include <stdio.h>
 
 #include "CGetFileInfo.h"
-
-#define FILENAME "../readfile.txt"
+#include "CListDirCont.h"
 
 int main()
 {
-    const char* fileName = FILENAME;
-    CGetFileInfo fd(fileName);
-    fd.GeiFileSize();
+    CListDirCont& dp = CListDirCont::GetInstance();
+    dp.ListDirCont();
     return 0;
 }
